@@ -1,0 +1,35 @@
+Sure! Here is a list of commonly used Composer commands:
+
+1. `composer init`: Initializes a new `composer.json` file to start managing dependencies for a project.
+
+2. `composer install`: Installs all the dependencies listed in the `composer.json` file for the current project.
+
+3. `composer require`: Adds a new package as a dependency for the project. For example: `composer require package-name`.
+
+4. `composer update`: Updates the dependencies specified in the `composer.json` file to their latest versions, respecting the version constraints.
+
+5. `composer remove`: Removes a package from the project's dependencies. For example: `composer remove package-name`.
+
+6. `composer show`: Displays the list of installed packages and their versions.
+
+7. `composer outdated`: Shows a list of installed packages that have newer versions available.
+
+8. `composer dump-autoload`: Regenerates the autoloader for the project. This command is useful when you add or remove classes from your project.
+
+9. `composer self-update`: Updates the Composer itself to the latest version.
+
+10. `composer create-project`: Creates a new project from a specific package, e.g., `composer create-project laravel/laravel project-name`.
+
+11. `composer validate`: Validates the `composer.json` file for syntax errors.
+
+12. `composer require --dev`: Adds a package as a development dependency, meaning it will only be required for development purposes and won't be installed in production.
+
+13. `composer run-script`: Executes a script defined in the `composer.json` file.
+
+14. `composer global`: Used to manage global Composer packages.
+
+15. `composer clear-cache`: Clears the Composer's internal cache.
+
+16. `composer archive`: Creates an archive of the package.
+
+These are some of the essential commands you can use with Composer. Remember, you can always get more information about each command and their options by running `composer COMMAND --help` in your terminal or by visiting the official Composer documentation: https://getcomposer.org/doc/.
