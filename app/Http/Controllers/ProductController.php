@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -36,7 +37,8 @@ class ProductController extends Controller
      */
     public function showOne($id)
     {
-        //
+        $product=DB::table("products")->where(["id"=>$id])->first();
+        return view("public.product")->with(["product"=>$product]);
     }
 /**
      * Display the specified resource.

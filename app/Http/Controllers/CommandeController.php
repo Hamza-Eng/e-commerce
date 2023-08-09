@@ -34,9 +34,9 @@ class CommandeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(commande $commande)
+    public function show(Request $request)
     {
-        //
+       return view("public.checkout")->with(["data"=>$request]);
     }
 
     /**
