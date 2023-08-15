@@ -11,7 +11,7 @@
                     style="padding-bottom: 2px;">0</span>
             </a>
             <a href="" class="btn px-0 ml-2">
-                <i class="fas fa-shopping-cart text-dark"></i>
+                <i class="fas fa-LUXping-cart text-dark"></i>
                 <span class="badge text-dark border border-dark rounded-circle"
                     style="padding-bottom: 2px;">0</span>
             </a>
@@ -21,8 +21,8 @@
 <div class="row align-items-center bg-light py-3 px-xl-5 d-none d-lg-flex">
     <div class="col-lg-4">
         <a href="" class="text-decoration-none">
-            <span class="h1 text-uppercase text-primary bg-dark px-2">Multi</span>
-            <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">Shop</span>
+            <span class="h1 text-uppercase text-primary bg-dark px-2">ORIO</span>
+            <span class="h1 text-uppercase text-dark bg-primary px-2 ml-n1">LUX</span>
         </a>
     </div>
     <div class="col-lg-4 col-6 text-left">
@@ -82,8 +82,8 @@
         <div class="col-lg-9">
             <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 py-lg-0 px-0">
                 <a href="" class="text-decoration-none d-block d-lg-none">
-                    <span class="h1 text-uppercase text-dark bg-light px-2">Multi</span>
-                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">Shop</span>
+                    <span class="h1 text-uppercase text-dark bg-light px-2">ORIO</span>
+                    <span class="h1 text-uppercase text-light bg-primary px-2 ml-n1">LUX</span>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse"
                     data-target="#navbarCollapse">
@@ -92,19 +92,19 @@
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav mr-auto py-0">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="shop.html" class="nav-item nav-link">Shop</a>
-                        <a href="detail.html" class="nav-item nav-link">Shop Detail</a>
+                        <a href="LUX.html" class="nav-item nav-link">LUX</a>
+                        <a href="detail.html" class="nav-item nav-link">LUX Detail</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages <i
                                     class="fa fa-angle-down mt-1"></i></a>
                             <div class="dropdown-menu bg-primary rounded-0 border-0 m-0">
-                                <a href="cart.html" class="dropdown-item">Shopping Cart</a>
+                                <a href="cart.html" class="dropdown-item">LUXping Cart</a>
                                 <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 <a href="checkout.html" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact </a>
                     </div>
                     <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
                         <a href="" class="btn px-0">
@@ -113,7 +113,7 @@
                                 style="padding-bottom: 2px;">0</span>
                         </a>
                         <a href="" class="btn px-0 ml-3">
-                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <i class="fas fa-LUXping-cart text-primary"></i>
                             <span class="badge text-secondary border border-secondary rounded-circle"
                                 style="padding-bottom: 2px;">0</span>
                         </a>

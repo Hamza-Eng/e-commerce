@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -30,16 +31,20 @@ Route::prefix('public')->group(function () {
     //just for test
     // Route::get('/product', function () {return view('public.product');})->name("product");
 
-     Route::get("/product/{id}",[ProductController::class,"showOne"])->name("product");
+    Route::get("/product/{id}", [ProductController::class, "showOne"])->name("product");
 
-    Route::get("/product/all",[ProductController::class,"showAll"])->name("Allproduct");
+    Route::get("/product/all", [ProductController::class, "showAll"])->name("Allproduct");
 
-    Route::get("/categorie/{categorie}",[ProductController::class,"showAll"])->name("categorie");
+    Route::get("/categorie/{categorie}", [ProductController::class, "showAll"])->name("categorie");
 
-    Route::get('/checkout', [CommandeController::class,"show"])->name("checkout");
+    Route::get('/checkout', [CommandeController::class, "show"])->name("checkout");
 
-    Route::post('/checkout', [CommandeController::class,"create"])->name("checkout");
-
+    Route::post('/checkout', [CommandeController::class, "create"])->name("checkout");
 });
 
-
+Route::prefix('adminAreasGnHwQU2utgBTZHcVk9XEfuVa5gHXC7TehuuHr2vIFEFciQO0vjF4eH1Sw8lUOix23WWAf0TgSCMuqgn3AIe63C2OWO5MVr2mMzy')->group(function () {
+    Route::get("/", [AdminController::class, "show"])->name("admin_home");
+    Route::get("/addNewProduct", function () {return view("admin.add_product");})->name("AddProduct");
+    Route::post("/addNewProduct", [ProductController::class, "create"])->name("AddProduct");
+    Route::get('/confirme/{id}', [CommandController::class, "confirme"])->name("confirme");
+});

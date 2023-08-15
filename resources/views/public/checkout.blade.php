@@ -50,36 +50,38 @@
         <div class="row px-xl-5">
             <div class="col-lg-8">
                 <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing Address</span></h5>
+                <form action="{{ route('checkout') }}" method="POST">
+                    @csrf
                 <div class="bg-light p-30 mb-5">
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label>الاسم الكامل</label>
-                            <input class="form-control" type="text" name="name" placeholder="الاسم">
+                            <input class="form-control" type="text" name="name" placeholder=" الاسم الكامل ">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>رقم الهاتف</label>
-                            <input class="form-control" type="text" name="phone" placeholder="رقم الهاتف">
+                            <input class="form-control" type="text" name="telephone" placeholder="رقم الهاتف">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>العنوان</label>
                             <input class="form-control" type="text" name="adresse" placeholder="العنوان">
-                        </div>                                               
-                        {{-- <div class="col-md-6 form-group">
-                            <label>Country</label>
-                            <select class="custom-select">
-                                <option selected>United States</option>
-                                <option>Afghanistan</option>
-                                <option>Albania</option>
-                                <option>Algeria</option>
-                            </select>
-                        </div> --}}
+                        </div>                                                   
                         <div class="col-md-6 form-group">
                             <label>المدينة</label>
-                            <input class="form-control" type="text" placeholder="المدينة">
-                        </div>                                               
+                            <input class="form-control" name="city" name="city" type="text" placeholder="المدينة">
+                        </div>
+                    
+                            <input class="form-control" name="product_id" style="visibility: hidden"   type="text" value="{{request()->get("product_id")}}">
+                            <input class="form-control" name="qte" style="visibility: hidden"   type="text" value="{{request()->get("qte")}}">
+                                                                   
                         
                     </div>
+                    <div class="mb-5">
+                    
+                        <button class="btn btn-block btn-primary font-weight-bold py-3">Place Order</button>
+                    </div>
                 </div>
+            </form>
                 <div class="collapse mb-5" id="shipping-address">
                     <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Shipping Address</span></h5>
                     <div class="bg-light p-30">
@@ -158,29 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-5">
-                    <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Payment</span></h5>
-                    <div class="bg-light p-30">
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">Paypal</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Direct Check</label>
-                            </div>
-                        </div>
-                        <div class="form-group mb-4">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Bank Transfer</label>
-                            </div>
-                        </div>
-                        <button class="btn btn-block btn-primary font-weight-bold py-3">Place Order</button>
-                    </div>
+               
                 </div>
             </div>
         </div>

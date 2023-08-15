@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string("adresse");
             $table->string("telephone");
             $table->string("city");
+            $table->integer("qte")->default(1);
             $table->string("status")->default("EN-COUR");           
             $table->timestamps();
         });

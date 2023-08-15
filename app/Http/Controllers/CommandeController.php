@@ -20,7 +20,16 @@ class CommandeController extends Controller
      */
     public function create(Request $request)
     {
-       return $request;
+       
+        $commande=new commande();
+        $commande->name=$request->get("name");
+        $commande->telephone=$request->get("telephone");
+        $commande->city=$request->get("city");
+        $commande->adresse=$request->get("adresse");
+        $commande->product_id=$request->get("product_id");
+        $commande->qte=$request->get("qte");
+        $commande->save();
+        return redirect()->route("home");
     }
 
     /**

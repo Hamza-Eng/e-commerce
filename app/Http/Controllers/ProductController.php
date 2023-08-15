@@ -37,8 +37,10 @@ class ProductController extends Controller
      */
     public function showOne($id)
     {
-        $product=DB::table("products")->where(["id"=>$id])->first();
-        return view("public.product")->with(["product"=>$product]);
+        // $product=DB::table("products")->where(["id"=>$id])->first();
+        return view("public.product")->with([
+             // "product"=>$product
+        ]);
     }
 /**
      * Display the specified resource.
