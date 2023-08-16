@@ -79,13 +79,13 @@
                             <form method="POST" action="{{ route('AddProduct') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">الاسم</label>
+                                    <label for="exampleInputEmail1" class="form-label">name </label>
                                     <input required  type="text" class="form-control" name="name" id="exampleInputEmail1"
                                         aria-describedby="emailHelp">
 
                                 </div>
                                 <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">الثمن</label>
+                                    <label for="exampleInputPassword1" class="form-label">price </label>
                                     <input type="number"  required required  name="price" placeholder="MAD" class="form-control" id="exampleInputPassword1">
                                 </div>
                                 {{-- <div class="mb-3 form-check">
@@ -97,18 +97,22 @@
                                     <select class="form-select" id="floatingSelect"
                                         aria-label="Floating label select example" name="categorie">
 
-                                        <option value="عسل حر">عسل حر</option>
-                                        <option value="زيوت">زيوت بلدية</option>
+                                        <option value="general" >general for now</option>
+                                       
 
                                     </select>
                                 </div>
                                 <div class="form-floating">
                                     <textarea  name="description" required class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="height: 150px;"></textarea>
-                                    <label for="floatingTextarea">وصف </label>
+                                    <label for="floatingTextarea"> description </label>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="formFile" class="form-label">image</label>
-                                    <input class="form-control" name="image" accept=".jpeg, .png, .jpg," type="file" id="formFile">
+                                    <label for="formFile" class="form-label">main image</label>
+                                    <input class="form-control" name="main_image" accept=".jpeg, .png, .jpg," type="file" id="formFile">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">images</label>
+                                    <input class="form-control" multiple name="images" accept=".jpeg, .png, .jpg," type="file" id="formFile">
                                 </div>
                                 <button type="submit" class="btn btn-primary">ADD New Product</button>
                             </form>

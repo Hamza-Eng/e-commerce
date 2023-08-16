@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string("name");
             $table->string("qte")->nullable();
             $table->string("price");
-            $table->string("image");
+            $table->string("main_image");            
+            $table->string("images")->nullable();
             $table->string("categorie");
             $table->longText("description")->nullable();
             $table->timestamps();
