@@ -1,6 +1,6 @@
+<div class="row px-xl-5">
 @if (!@empty($products))
     @foreach ($products as $product)
-    <div class="row px-xl-5">
         <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
             <div class="product-item bg-light mb-4">
                 <div class="product-img position-relative overflow-hidden">
@@ -33,6 +33,11 @@
                 </div>
             </div>
         </div>
-       </div>        
-    @endforeach
-@endif
+        @endforeach
+        
+     
+       @else
+           <h1 style="text-align: center">Vide :)</h1>
+       @endif
+        
+    </div>        

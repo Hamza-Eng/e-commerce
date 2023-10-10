@@ -112,7 +112,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">images</label>
-                                    <input class="form-control" multiple name="images" accept=".jpeg, .png, .jpg," type="file" id="formFile">
+                                    <input class="form-control" multiple name="images[]" accept=".jpeg, .png, .jpg," type="file" id="formFile">
                                 </div>
                                 <button type="submit" class="btn btn-primary">ADD New Product</button>
                             </form>
@@ -145,7 +145,7 @@
     <script src="{{ asset('admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js')}}"></script>
+    <script src="{{ asset('admin/js/main.js')}}"></script>
 </body>
 
 </html>

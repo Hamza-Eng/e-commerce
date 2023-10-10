@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MultiShop - Online Shop Website Template</title>
+    <title>Orio Lux</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -73,6 +73,8 @@
                     
                             <input class="form-control" name="product_id" style="visibility: hidden"   type="text" value="{{request()->get("product_id")}}">
                             <input class="form-control" name="qte" style="visibility: hidden"   type="text" value="{{request()->get("qte")}}">
+                            <input class="form-control" name="pname" style="visibility: hidden"   type="text" value="{{request()->name}}">
+                            <input class="form-control" name="price" style="visibility: hidden"   type="text" value="{{request()->get("price")}}">
                                                                    
                         
                     </div>
@@ -141,22 +143,31 @@
                     <div class="border-bottom">
                         <h6 class="mb-3">Products</h6>
                         <div class="d-flex justify-content-between">
-                            <p>Product Name 1</p>
-                            <p>$150</p>
+                            <p>{{request()->name}}</p>
+                            <p>{{request()->price}} DH</p>
                         </div>
+                        <div class="d-flex justify-content-between">
+                            <p>quantity</p>
+                            <p>{{request()->qte}} </p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p>LIVRAISON</p>
+                            <p>0 DH</p>
+                        </div>
+                        
                        
                     </div>
                     <div class="border-bottom pt-3 pb-2">
                         <div class="d-flex justify-content-between mb-3">
-                            <h6>Subtotal</h6>
-                            <h6>$150</h6>
+                            <h6>TOTAL</h6>
+                            <h6>{{request()->price}} DH</h6>
                         </div>
                         
                     </div>
                     <div class="pt-2">
                         <div class="d-flex justify-content-between mt-2">
                             <h5>Total</h5>
-                            <h5>$160</h5>
+                            <h5>{{request()->price}} DH</h5>
                         </div>
                     </div>
                 </div>

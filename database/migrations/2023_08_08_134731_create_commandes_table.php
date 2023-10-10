@@ -18,7 +18,15 @@ return new class extends Migration
             $table->string("adresse");
             $table->string("telephone");
             $table->string("city");
+            $table->string("data");
             $table->integer("qte")->default(1);
+// Les status des commendes :
+// EN-COUR
+// Livré
+// Ramasser
+// Anuller
+// Reporté 
+// Pas réponse
             $table->string("status")->default("EN-COUR");           
             $table->timestamps();
         });

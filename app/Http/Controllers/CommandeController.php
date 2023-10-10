@@ -4,9 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\commande;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CommandeController extends Controller
 {
+
+    public function confirme($id)
+    {
+        DB::table("commandes")
+        ->where(["id"=>$id])
+        ->update(["status"=>"confirmed"]);
+        return redirect()->route("admin_home");
+    }
     /**
      * Display a listing of the resource.
      */
@@ -18,9 +27,14 @@ class CommandeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
+
+
+     public function updateStatus($id,$status){
+            DB::table("commandes")->where(["id"=>$id])->update(["status"=>$status]);
+     }
     public function create(Request $request)
     {
-       
+      
         $commande=new commande();
         $commande->name=$request->get("name");
         $commande->telephone=$request->get("telephone");
@@ -28,8 +42,9 @@ class CommandeController extends Controller
         $commande->adresse=$request->get("adresse");
         $commande->product_id=$request->get("product_id");
         $commande->qte=$request->get("qte");
+        $commande->data="(".$request->get("pname").",".$request->get("qte").",".$request->get("price")."dh";
         $commande->save();
-        return redirect()->route("home");
+        return redirect()->route("completed");
     }
 
     /**
@@ -61,7 +76,7 @@ class CommandeController extends Controller
      */
     public function update(Request $request, commande $commande)
     {
-        //
+       $this->updateStatus($request->get("id"),$request->get("status"));
     }
 
     /**

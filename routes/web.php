@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommandeController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProductController;
+use App\Models\commande;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,11 +42,15 @@ Route::prefix('public')->group(function () {
     Route::get('/checkout', [CommandeController::class, "show"])->name("checkout");
 
     Route::post('/checkout', [CommandeController::class, "create"])->name("checkout");
+
+    Route::get('/completed', function(){return view("public.completed");})->name("completed");
 });
 
 Route::prefix('adminAreasGnHwQU2utgBTZHcVk9XEfuVa5gHXC7TehuuHr2vIFEFciQO0vjF4eH1Sw8lUOix23WWAf0TgSCMuqgn3AIe63C2OWO5MVr2mMzy')->group(function () {
     Route::get("/", [AdminController::class, "show"])->name("admin_home");
     Route::get("/addNewProduct", function () {return view("admin.add_product");})->name("AddProduct");
     Route::post("/addNewProduct", [ProductController::class, "create"])->name("AddProduct");
-    Route::get('/confirme/{id}', [CommandController::class, "confirme"])->name("confirme");
+    Route::get('/confirme/{id}', [CommandeController::class, "confirme"])->name("confirme");
+    Route::get('/products', [ProductController::class, "showAll"])->name("products");
+    Route::get('/product/delete', [ProductController::class, "destroy"])->name("delete");
 });

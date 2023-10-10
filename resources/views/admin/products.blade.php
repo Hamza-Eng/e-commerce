@@ -84,10 +84,7 @@ th, td {
                     <br>
                     <a href="{{ route('home') }}" target="__blank" class="nav-item nav-link active">User Home</a>
                 </div>
-                <div class="navbar-nav w-100">
-                    <br>
-                    <a href="{{ route('products') }}" target="__blank" class="nav-item nav-link active">products</a>
-                </div>
+               
                 
                 <div class="navbar-nav w-100">
                     <div class="container-fluid pt-4 px-4">
@@ -183,28 +180,28 @@ th, td {
                                         <th scope="col"><input class="form-check-input" type="checkbox"></th>
                                         <th scope="col">ID  </th>
                                         <th scope="col">NAME</th>
-                                        <th scope="col">ADRESSE</th>
-                                        <th scope="col">PHONE</th>
-                                        <th scope="col">Status</th>
+                                        <th scope="col">price</th>
+                                        <th scope="col">categorie</th>
+                                        <th scope="col">description</th>
                                         <th scope="col">created_at</th>
-                                        <th scope="col">data</th>
-                                        <th scope="col">Action</th>
+                                        
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
-                                  @if (!@empty($unconfirmedCommande))
-                                      @foreach ($unconfirmedCommande as $Commande )
+                                  @if (!@empty($products))
+                                      @foreach ($products as $product )
                                       <tr>
                                         <td><input class="form-check-input" type="checkbox"></td>
-                                        <td>{{$Commande->id}}</td>
-                                        <td>{{$Commande->name}}</td>
-                                        <td>{{$Commande->adresse}}</td>
-                                        <td>{{$Commande->telephone}}</td>
-                                        <td>{{$Commande->status}}</td>
-                                        <td>{{$Commande->created_at}}</td>
-                                        <td>{{$Commande->data}}</td>
+                                        <td>{{$product->id}}</td>
+                                        <td>{{$product->name}}</td>
+                                        <td>{{$product->price}}</td>
+                                        <td>{{$product->categorie}}</td>
+                                        <td>{{$product->description}}</td>
+                                        <td>{{$product->created_at}}</td>
                                         
-                                        <td><a class="btn btn-sm btn-primary" href="{{ route('confirme', ['id'=>$Commande->id]) }}">Confirme</a></td>
+                                        
+                                        <td><a class="btn btn-sm btn-danger" href="{{ route('delete', ['id'=>$product->id]) }}">Delete</a></td>
                                     </tr> 
                                       @endforeach
                                   @endif
@@ -214,106 +211,8 @@ th, td {
                         </div>
                     </div>
                 </div>
-                <!-- Recent Sales End -->     <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Commande Confirmed</h6>
-                        <a href="">Show All</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">ID  </th>
-                                    <th scope="col">NAME</th>
-                                    <th scope="col">ADRESSE</th>
-                                    <th scope="col">PHONE</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">created_at</th>
-                                    <th scope="col">data</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if (!@empty($confirmedCommande))
-                                @foreach ($confirmedCommande as $Commande )
-                                <tr>
-                                  <td><input class="form-check-input" checked disabled type="checkbox"></td>
-                                  <td>{{$Commande->id}}</td>
-                                  <td>{{$Commande->name}}</td>
-                                  <td>{{$Commande->adresse}}</td>
-                                  <td>{{$Commande->telephone}}</td>
-                                  <td>{{$Commande->status}}</td>
-                                  <td>{{$Commande->created_at}}</td>
-                                  <td>{{$Commande->product_id}}</td>
-                                  
-                                  {{-- <td><a class="btn btn-sm btn-primary" href="">Detail</a></td> --}}
-                              </tr> 
-                                @endforeach
-                            @endif
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+           
 
-                <!-- Recent Sales Start -->
-                
-                <!-- Recent Sales End -->     <!-- Recent Sales Start -->
-            <!-- Recent Sales End -->
-{{-- 
-            <!-- Sales Chart Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Worldwide Sales</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Salse & Revenue</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <canvas id="salse-revenue"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Sales Chart End --> --}}
-
-
-       
-
-
-            <!-- Widgets Start -->
-            {{-- <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                  
-                    <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div> --}}
-            <!-- Widgets End -->
-
-
-            <!-- Footer Start -->
-         
-            <!-- Footer End -->
         </div>
         <!-- Content End -->
 
